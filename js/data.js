@@ -3,7 +3,7 @@
     function render_about(data, div){
         var list = $("<ul>")
             .attr("style", "list-style-type:none")
-            .appendTo(div)
+            .appendTo(div);
         $.each(data, function(i, content) {
             var item = $("<li>")
                 .appendTo(list);
@@ -15,7 +15,7 @@
 
     function render_education(data, div){
         var list = $("<ul>")
-            .appendTo(div)
+            .appendTo(div);
         $.each(data, function(i, education) {
             var item = $("<li>")
                 .appendTo(list);
@@ -45,7 +45,7 @@
 
     function render_work(data, div){
         var list = $("<ul>")
-            .appendTo(div)
+            .appendTo(div);
         $.each(data, function(i, work) {
             var item = $("<li>")
                 .appendTo(list);
@@ -75,7 +75,7 @@
 
     function render_interest(data, div){
         var list = $("<ul>")
-            .appendTo(div)
+            .appendTo(div);
         $.each(data, function(i, content) {
             var item = $("<li>")
                 .appendTo(list);
@@ -87,7 +87,7 @@
 
     function render_publication(data, div, t){
         var list = $("<ul>")
-            .appendTo(div)
+            .appendTo(div);
         $.each(data, function(i, paper) {
             var item = $("<li>")
                 .attr("id", t+(i+1))
@@ -95,13 +95,10 @@
             $("<span>")
                 .html('<strong>'+paper.title+'</strong><br>')
                 .appendTo(item);
-
             var authors = paper.author.replace('Jheng-Long Wu', '<strong>Jheng-Long Wu</strong>');
             $("<span>")
                 .html(authors+'<br>')
                 .appendTo(item);
-            
-            
             $("<span>")
                 .addClass("source")
                 .html(paper.source+', ')
@@ -132,14 +129,13 @@
 
     function render_project(data, div){
         var list = $("<ul>")
-            .appendTo(div)
+            .appendTo(div);
         $.each(data, function(i, project) {
             var item = $("<li>")
                 .appendTo(list);
-
             if (project.title.length > 0){
                 $("<span>")
-                    .html('<strong>'+project.title + ', </strong>')
+                    .html('<strong>' + project.title + '</strong>, ')
                     .appendTo(item);
             };
             if (project.sponsor.length > 0){
@@ -158,7 +154,37 @@
                     .appendTo(item);
             };
         });
-    }
+    };
+
+    function render_competition(data, div){
+        //console.log(data);
+        var list = $("<ul>")
+            .appendTo(div)
+        $.each(data, function(i, competition) {
+            var item = $("<li>")
+                .appendTo(list);
+            if (competition.place.length > 0){
+                $("<span>")
+                    .html('<strong>'+competition.place + '</strong>, ')
+                    .appendTo(item);
+            };
+            if (competition.title.length > 0){
+                $("<span>")
+                    .html('<strong>'+competition.title + '</strong>, ')
+                    .appendTo(item);
+            };
+            if (competition.organization.length > 0){
+                $("<span>")
+                    .html(competition.organization + ', ')
+                    .appendTo(item);
+            };
+            if (competition.date.length > 0){
+                $("<span>")
+                    .html(competition.date)
+                    .appendTo(item);
+            };
+        });
+    };
 
     function render_contact(data, div){
         var list = $("<ul>")
@@ -219,11 +245,12 @@
         render_photo("img/me.jpg", $("#photo"));
         render_qr("img/QR.png", $("#qr"));
         render_education(data.education, $("#education"));
-        render_work(data.work, $("#works"));
-        render_interest(data.interest, $("#interests"));
+        render_work(data.work, $("#work"));
+        render_interest(data.interest, $("#interest"));
         render_publication(data.journal, $("#journal"), "J");
         render_publication(data.conference, $("#conference"), "C");
-        render_project(data.project, $("#projects"));
+        render_project(data.project, $("#project"));
+        render_competition(data.competition, $("#competition"));
         render_contact(data.contact, $("#contact"));
     }
 
