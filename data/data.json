@@ -55,7 +55,14 @@
                   "department": "Information Management",
               "note": "I do the Machine Lernging approaches to problem soluving whcih are patent analysis and prediction tasks."}
             ],
-"journal": [{"author": "Jheng-Long Wu, Yuanye He, Liang-Chih Yu*, and K. Robert Lai",
+"journal": [
+	         {"author": "Jheng-Long Wu*, Min-Tzu Huang, Kai-Hsuan Liu and Chi-Sheng Yang",
+                "date": "(2021, January)", 
+                "title": "Sentiment analysis of stock markets using a novel dimensional valence–arousal approach", 
+                "source": "Soft Computing, 25", 
+                "page": "4433-4450", 
+                "level": "(SCI)"},
+	         {"author": "Jheng-Long Wu, Yuanye He, Liang-Chih Yu*, and K. Robert Lai",
                 "date": "(2020, January)", 
                 "title": "Identifying emotion labels from psychiatric social texts using a bi-directional LSTM-CNN model", 
                 "source": "IEEE Access, 8(1)", 
@@ -172,7 +179,7 @@
              
             ],
  "conference": [
-             {"author": "[2]. Jheng-Long Wu*, Chi-Sheng Yang, Kai-Hsuan Liu, and Min-Tzu Huang",
+             {"author": "Jheng-Long Wu*, Chi-Sheng Yang, Kai-Hsuan Liu, and Min-Tzu Huang",
                 "date": "(2019, October)", 
                 "title": "A deep learning model for dimensional valence-arousal intensity prediction in stock market", 
                 "source": "Proceedings of the 10th International Conference on Awareness Science and Technology (IEEE iCAST 2019)", 
